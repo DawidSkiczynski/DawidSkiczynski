@@ -10,10 +10,15 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    <?php
-        if(isset($_SESSION['dziala'])){
-            echo "<p>{$_SESSION['dziala']}</p>";
-        }
-    ?>
+<?php
+
+if($_SESSION['typ']=='admin'){
+    echo "zalogowano na konto admina";
+}
+else if($_SESSION['typ']=='user'){
+    echo "zalogowano na konto usera";
+}
+
+?>
 </body>
 </html>
