@@ -15,7 +15,7 @@ session_start();
             require_once ('polacz.php');
             $login=$_POST['login'];
             $haslo=$_POST['haslo'];
-            $pol=new mysqli('localhost','root','','test');
+            $pol=new mysqli('localhost','root','','powtorzenie');
             $login=$pol->real_escape_string($login);
             $haslo=$pol->real_escape_string($haslo);
             $sql="SELECT * FROM users WHERE login='$login'";
@@ -24,8 +24,11 @@ session_start();
                 $wiersz=$wynik->fetch_row();
                 $haslo2=$wiersz[1];
                 if($haslo==$haslo2){
-                    $_SESSION['dziala']="dziala";
-                    header('location: user-content.php');
+                    $sql2="SELECT * FROM users WHERE typ='$typ'";
+                    $wynik2=$pol->query($sql2);
+                    $wiersz2=$wynik2->fetch_row();
+                    $_SESSION['typ']=$kto=$wiersz[3];
+                    header('location: content.php');
                 }
                 else{
                     $_SESSION['blad']="błędny login lub hasło";
