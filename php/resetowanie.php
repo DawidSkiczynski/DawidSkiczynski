@@ -1,3 +1,7 @@
+
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,17 +19,17 @@
             $pol=new mysqli('localhost','root','','test');
             $login=trim($pol->real_escape_string($login));
             $random=rand(10,10000);
+            $_SESSION['nazwa']=$login;
             $sql="SELECT * FROM users WHERE login='$login'";
             $wynik=$pol->query($sql);
             if($wynik->num_rows==1){
                 $dod="UPDATE users SET kod='$random' WHERE login='$login'";
                 if(mysqli_query($pol, $dod)){
-                    echo "dodano kod";
-                    if(mail("informatyk4ai4@wp.pl","reset hasła","Twój kod resetu to: $random")){
-                        echo "udało się";
+                    if(mail("tesciktegotypu@op.pl","reset hasła","Twój kod resetu to: $random")){
+                        
                     }
                     else{
-                        echo "nie udało się";
+                        echo "nie udało się wysłać kodu";
                     }
                 }
             }
@@ -36,7 +40,7 @@
         else{
             echo "błąd";
         }
-
+        $pol->close();
     ?>
 </body>
 </html>
