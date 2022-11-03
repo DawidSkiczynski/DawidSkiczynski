@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="h">
+    <button onclick="f()">click</button>
+    <table>
+        <tr>
+            <td colspan="4" id="td1"><p>kolor główny</p></td>
+        </tr>
+        <tr>
+            <td id="td2"><p>kolor2</p></td>
+            <td id="td3"><p>kolor3</p></td>
+            <td id="td4"><p>kolor4</p></td>
+            <td id="td5"><p>kolor5</p></td>
+        </tr>
+    </table>
+
+    <script>
+        function f(){
+            let h=document.getElementById("h").value;
+            document.getElementById("td1").style.backgroundColor="HSL("+h+",100%,50%)";
+            document.getElementById("td2").style.backgroundColor="HSL("+h+",80%,50%)";
+            document.getElementById("td3").style.backgroundColor="HSL("+h+",60%,50%)";
+            document.getElementById("td4").style.backgroundColor="HSL("+h+",40%,50%)";
+            document.getElementById("td5").style.backgroundColor="HSL("+h+",20%,50%)";
+        }
+    </script>
+
+</body>
+</html>
