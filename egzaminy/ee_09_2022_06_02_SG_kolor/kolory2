@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="h">
+    <button onclick="f()">click</button>
+    <table>
+        <tr>
+            <td colspan="4"><p>kolor główny</p></td>
+        </tr>
+        <tr>
+            <td><p>kolor2</p></td>
+            <td><p>kolor3</p></td>
+            <td><p>kolor4</p></td>
+            <td><p>kolor5</p></td>
+        </tr>
+    </table>
+
+    <script>
+        function f(){
+                let s=100;
+                let h=document.querySelector("#h").value;
+                let td=document.querySelectorAll("td");
+                for(let i=0;i<td.length;i++){
+                    td[i].style.backgroundColor="HSL("+h+","+s+"%,50%)";
+                    s-=20;
+                }
+            }
+    </script>
+
+</body>
+</html>
