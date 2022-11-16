@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="rodzaj"><br>
+    R:<input type="number" id="r"> G:<input type="number" id="g"> B:<input type="number" id="b"><br>
+    <button onclick="f()">zamówienie</button><br>
+    Twoje zamówienie <span id="w"></span><br>
+    <button id="rgb" onclick="g()">kolor</button>
+    <script>
+
+        function f(){
+            let x=document.querySelector("#rodzaj").value;
+            let y;
+            if(x=="1"){
+                y="to cukierek cytryna";
+            }
+            else if(x=="2"){
+                y="to cukierek liść";
+            }
+            else if(x==3){
+                y="to cukierek banan";
+            }
+            else{
+                y="to inny";
+            }
+
+            w.innerHTML=y;
+        }
+
+        function g(){
+            let r=document.querySelector("#r").value;
+            let g=document.querySelector("#g").value;
+            let b=document.querySelector("#b").value;
+            rgb.style.backgroundColor="RGB("+r+","+g+","+b+")";
+        }
+
+    </script>
+</body>
+</html>
