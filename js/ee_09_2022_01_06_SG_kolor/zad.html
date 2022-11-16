@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <div>
+        <h1>cześć</h1>
+    </div><br>
+    <img src="cos.jpg" alt="nima" id="ramka"><br>
+    <button id="b1" onclick="f(this)">Indigo</button>
+    <button id="b2" onclick="f(this)">SteelBlue</button>
+    <button id="b3" onclick="f(this)">Olive</button><br><br>
+    <select onchange="g(this)">
+        <option value="white">white</option>
+        <option value="tan">tan</option>
+        <option value="black">black</option>
+        <option value="red">red</option>
+    </select><br><br>
+    <input onblur="h(this)"><br>
+    <input type="checkbox" onclick="j(this)"><br>
+    <input type="radio" value="disc" onclick="k(this)" name="r"><br>
+    <input type="radio" value="square" onclick="k(this)" name="r"><br>
+    <input type="radio" value="circle" onclick="k(this)" name="r"><br>
+    <ul id="lista">
+        <li>TekstTegoTypu</li>
+    </ul>
+    <script>
+
+        function f(x){
+            document.body.style.backgroundColor=x.innerHTML;
+        }
+
+        function g(x){
+            document.body.style.color=x.value;
+        }
+
+        function h(x){
+            document.body.style.fontSize=x.value;
+        }
+
+        function j(x){
+            if(x.checked){
+                ramka.style.border="3px solid red";
+            }
+            else   
+                ramka.style.border="0px solid black";
+        }
+
+        function k(x){
+            lista.style.listStyleType=x.value;
+        }
+    </script>
+</body>
+</html>

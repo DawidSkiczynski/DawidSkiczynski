@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .glowne{
+            height: 600px;
+            width: 1000px;
+            margin: auto;
+        }
+        .gora{
+            height: 400px;
+            width: 1000px;
+            border: 1px solid black;
+            float: left;
+            margin: auto;
+        }
+        .dol{
+            height: 200px;
+            width: 1000px;
+            border: 1px solid black;
+            float: left;
+        }
+        img{
+            margin-top: 50px;
+            margin-left: 175px;
+        }
+        .duzy{
+            width: 300px;
+            height: 300px;
+            margin-left: 350px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="glowne">
+        <div class="gora" >
+            <img class="duzy" src="cosduze.jpg" alt="nima" id="duze">
+        </div>
+
+        <div class="dol">
+            <img src="cos.jpg" alt="nima" onclick="f(this)">
+            <img src="orzel.jpg" alt="nima" onclick="f(this)">
+            <img src="tygrys.jpg" alt="nima" onclick="f(this)">
+        </div>
+    </div>
+    <script>
+        function f(x){
+            let duze=document.querySelector("#duze").src=x.src;
+        }
+    </script>
+</body>
+</html>
